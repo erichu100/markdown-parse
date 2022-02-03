@@ -57,6 +57,6 @@ public class MarkdownParseTest {
     }
     @Test
     public void backSlashTest() throws IOException {
-        assertEquals(List.of(), MarkdownParse.getLinks(Files.readString(Path.of("backSlashTest.md"))));
+        assertEquals(List.of("meow.com", "meow.com", "meow.com"), MarkdownParse.getLinks(Files.readString(Path.of("backSlashTest.md"))));
     }
 }
