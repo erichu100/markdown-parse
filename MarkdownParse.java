@@ -21,12 +21,12 @@ public class MarkdownParse {
             }
             if(nextOpenBracket != 0 && markdown.charAt(nextOpenBracket - 1) == '\\'){
                 int index = nextOpenBracket - 2;
-                int count = 0;
+                int count = 1;
                 while(index >= 0 && markdown.charAt(index) == '\\'){
                     count++;
                     index--;
                 }
-                if(count %2 == 1){
+                if(count % 2 == 1){
                     validLink = false;
                 }
             }
