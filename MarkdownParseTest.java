@@ -55,4 +55,8 @@ public class MarkdownParseTest {
     public void imageTest() throws IOException{
         assertEquals(List.of(), MarkdownParse.getLinks(Files.readString(Path.of("imageTest.md"))));
     }
+    @Test
+    public void backSlashTest() throws IOException {
+        assertEquals(List.of(), MarkdownParse.getLinks(Files.readString(Path.of("backSlashTest.md"))));
+    }
 }

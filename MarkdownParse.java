@@ -19,6 +19,17 @@ public class MarkdownParse {
             if(nextOpenBracket == -1 || nextCloseBracket == -1 || openParen == -1 || closeParen == -1){
                 return toReturn;
             }
+            if(nextOpenBracket != 0 && markdown.charAt(nextOpenBracket - 1) == '\\'){
+                int index = nextOpenBracket - 2;
+                int count = 0;
+                while(index >= 0 && markdown.charAt(index) == '\\'){
+                    count++;
+                    index--;
+                }
+                if(count %2 == 1){
+                    validLink = false;
+                }
+            }
             if((nextOpenBracket != 0  && markdown.charAt(nextOpenBracket - 1) == '!')
                 || (openParen != nextCloseBracket + 1)){
                 validLink = false;
@@ -39,5 +50,8 @@ public class MarkdownParse {
 	    String contents = Files.readString(fileName);
         ArrayList<String> links = getLinks(contents);
         System.out.println(links);
+    }
+    public int backslashCheck(){
+
     }
 }
