@@ -12,7 +12,7 @@ import org.junit.*;
 public class MarkdownParseTest {
     @Test
     public void addition() {
-        assertEquals(21, 9 + 10);
+        assertEquals(2, 1 + 1);
     }
     @Test
     public void basicTest() throws IOException{
