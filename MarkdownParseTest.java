@@ -18,6 +18,10 @@ import org.junit.*;
 
 public class MarkdownParseTest {
     @Test
+    public void meowMeow(){
+	assertEquals("Meow", "Meow");
+    }
+    @Test
     public void addition() {
         assertEquals(2, 1 + 1);
     }
