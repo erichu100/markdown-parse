@@ -19,8 +19,7 @@ public class MarkdownParse {
             int openParen = markdown.indexOf("(", nextCloseBracket);
             int closeParen = markdown.indexOf(")", openParen);
             if(nextOpenBracket == -1 || nextCloseBracket == -1 || openParen == -1 || closeParen == -1){
-               System.out.println("Test Complete.");
-               return toReturn;
+                return toReturn;
             }
             if(nextOpenBracket != 0 && markdown.charAt(nextOpenBracket - 1) == '\\'){
                 int index = nextOpenBracket - 2;
@@ -34,8 +33,7 @@ public class MarkdownParse {
                 }
             }
             if((nextOpenBracket != 0  && markdown.charAt(nextOpenBracket - 1) == '!')
-                || (openParen != nextCloseBracket + 1)
-                ){
+                || (openParen != nextCloseBracket + 1)){
                 validLink = false;
             }
             if(markdown.substring(openParen, closeParen).contains(" ")){
@@ -44,9 +42,10 @@ public class MarkdownParse {
             if(validLink) {
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
             }
+            toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
+            System.out.println(currentIndex);
         }
-        System.out.println("Test Complete.");
         return toReturn;
     }
     public static void main(String[] args) throws IOException {
