@@ -63,4 +63,16 @@ public class MarkdownParseTest {
     public void backSlashTest() throws IOException {
         assertEquals(List.of("meow.com", "meow.com", "meow.com"), MarkdownParse.getLinks(Files.readString(Path.of("backSlashTest.md"))));
     }
+    @Test
+    public void snippet1Test() throws IOException {
+        assertEquals(List.of("`google.com", "google.com", "ucsd.edu"), MarkdownParse.getLinks(Files.readString(Path.of("snippet1.md"))));
+    }
+    @Test
+    public void snippet2Test() throws IOException {
+        assertEquals(List.of("a.com", "a.com(())", "example.com"), MarkdownParse.getLinks(Files.readString(Path.of("snippet2.md"))));
+    }
+    @Test
+    public void snippet3Test() throws IOException {
+        assertEquals(List.of("https://ucsd-cse15l-w22.github.io/"), MarkdownParse.getLinks(Files.readString(Path.of("snippet3.md"))));
+    }
 }
